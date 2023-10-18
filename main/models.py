@@ -12,4 +12,7 @@ class Product(models.Model):
 
     name = models.CharField(max_length=200)
     vendor = models.CharField(max_length=200)
-    id_str = models.CharField('Unique Identifier', max_length=200, blank=True)
+    unique_name = models.CharField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.unique_name or self.name + " by " + self.vendor
