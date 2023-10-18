@@ -1,13 +1,13 @@
 from django.db import models
 
 class Product(models.Model):
-    class Types(models.TextChoices):
+    class Type(models.TextChoices):
         SOFTWARE = "sw"
         HARDWARE = "hw"
 
     type = models.CharField(
         max_length=2,
-        choices=Types.choices,
+        choices=Type.choices,
     )
 
     name = models.CharField(max_length=200)
