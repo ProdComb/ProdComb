@@ -16,3 +16,20 @@ class Product(models.Model):
 
     def __str__(self):
         return self.unique_name or self.name + " by " + self.vendor
+
+class Combination(models.Model):
+    class Status(models.IntegerChoices):
+        UNUSABLE = 0, "Unusable"
+        USABLE = 1, "Usable but has significant issues)"
+        GOOD = 2, "Works good but has some minor issues"
+        PERFECT = 3, "Works perfectly with no issues"
+
+
+    name = models.CharField(max_length=200)
+    products = models.ManyToManyField(Product)
+    status = models.IntegerField(
+        choices=Status.choices,
+    )
+
+    def __str__(self):
+        return self.name
