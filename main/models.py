@@ -20,7 +20,7 @@ class Product(models.Model):
 class Combination(models.Model):
     class Status(models.IntegerChoices):
         UNUSABLE = 0, "Unusable"
-        USABLE = 1, "Usable but has significant issues)"
+        USABLE = 1, "Usable but has significant issues"
         GOOD = 2, "Works good but has some minor issues"
         PERFECT = 3, "Works perfectly with no issues"
 
