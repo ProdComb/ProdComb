@@ -4,6 +4,18 @@ class Category(models.Model):
     name = models.CharField(max_length=200)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
 
+    @property
+    def parents(self):
+        if self.parent:
+            yield from self.parent.hierarchy
+
+    @property
+    def hierarchy(self):
+        category = self
+        while category:
+            yield category
+            category = category.parent
+
     def __str__(self):
         return self.name
 
