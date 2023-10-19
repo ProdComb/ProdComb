@@ -8,15 +8,7 @@ class Category(models.Model):
         return self.name
 
 class Product(models.Model):
-    class Type(models.TextChoices):
-        SOFTWARE = "sw"
-        HARDWARE = "hw"
-
-    type = models.CharField(
-        max_length=2,
-        choices=Type.choices,
-    )
-
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     search_term = models.CharField(max_length=200, unique=True)
     full_name = models.CharField(max_length=200)
     vendor = models.CharField(max_length=200)
