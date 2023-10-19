@@ -10,7 +10,7 @@ class Product(models.Model):
         choices=Type.choices,
     )
 
-    name = models.CharField(max_length=200)
+    full_name = models.CharField(max_length=200)
     vendor = models.CharField(max_length=200)
     search_term = models.CharField(max_length=200, unique=True)
 
