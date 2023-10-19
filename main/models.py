@@ -26,9 +26,7 @@ class Combination(models.Model):
 
     name = models.CharField(max_length=200)
     products = models.ManyToManyField(Product)
-    status = models.IntegerField(
-        choices=Status.choices,
-    )
+    status = models.IntegerField(choices=Status.choices)
 
     def __str__(self):
         return self.name
