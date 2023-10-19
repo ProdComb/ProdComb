@@ -10,9 +10,9 @@ class Product(models.Model):
         choices=Type.choices,
     )
 
+    search_term = models.CharField(max_length=200, unique=True)
     full_name = models.CharField(max_length=200)
     vendor = models.CharField(max_length=200)
-    search_term = models.CharField(max_length=200, unique=True)
 
     def __str__(self):
         return self.search_term or self.name + " by " + self.vendor
