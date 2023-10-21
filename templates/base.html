@@ -6,8 +6,19 @@
     <meta name="viewport" content="width=device-width" />
     <title>ProdComb: Product Combinations</title>
     <link rel="stylesheet" href="{% static 'normalize.css' %}" />
+    <style>
+      header > * {
+        display: inline-block
+      }
+    </style>
   </head>
-  <body>
-    <p class="big">Hello, World!</p>
+  <body style="margin: 1rem; text-align: center;">
+    <header>
+      <a style="display: block; font-size: 1.5rem; font-weight: bold; font-style: italic; text-decoration: none;"
+        href="/">ProdComb</a>
+      <h1>{% block heading %}{% endblock %}</h1>
+    </header>
+    <div>{% block content %}{% endblock %}</div>
+    <footer><p>Copyright © 2023 Mazhar Hussain</p></footer>
   </body>
 </html>
