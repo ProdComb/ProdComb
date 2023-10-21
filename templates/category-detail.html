@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{ category.name }} - Category - ProdComb{% endblock %}
+{% block heading %}{{ category.name }} Category{% endblock %}
+{% block content %}
+<b>Hierarchy</b>: {% for category_ in category.hierarchy %}<a href="{% url 'category_detail' category_.pk %}">{{ category_.name }}</a> &gt; {% endfor %}<br>
+<b>Products</b>: {% for product in category.product_set.all %}<a href="{% url 'product_detail' product.pk %}">{{ product.search_term }}</a>, {% endfor %}<br>
+{% endblock %}

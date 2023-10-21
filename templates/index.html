@@ -1,1 +1,9 @@
 {% extends "base.html" %}
+
+{% block content %}
+  <button onclick="window.location.href='{% url 'combinations' %}';">All Combinations</button><br>
+  <br>
+  <button onclick="window.location.href='{% url 'categories' %}';">All Categories</button><br>
+  <br>
+  <button onclick="window.location.href='{% url 'products' %}';">All Products</button><br>
+{% endblock %}

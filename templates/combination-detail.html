@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}{{ combination.name }} - ProdComb{% endblock %}
+{% block heading %}{{ combination.name }}{% endblock %}
+{% block content %}
+<b>Combination Name</b>: {{ combination.name }}<br>
+<b>Products</b>: {% for product in combination.products.all %}<a href="{% url 'product_detail' product.pk %}">{{ product.search_term }}</a>, {% endfor %}<br>
+<b>Condition</b>: {{ combination.get_status_display }}<br>
+{% endblock %}

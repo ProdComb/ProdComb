@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Product Combinations - ProdComb{% endblock %}
+{% block heading %}Product Combinations{% endblock %}
+{% block content %}
+  {% if combinations %}
+    <ul style="list-style: none; font-family: sans-serif;">
+    {% for combination in combinations %}
+      <li><a href="{% url 'combination_detail' combination.pk %}">{{ combination.name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock content %}

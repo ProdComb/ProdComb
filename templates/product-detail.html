@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ product.search_term }} - Product - ProdComb{% endblock %}
+{% block heading %}{{ product.search_term }}{% endblock %}
+{% block content %}
+<b>Search Term</b>: {{ product.search_term }}<br>
+<b>Full Name</b>: {{ product.full_name }}<br>
+<b>Vendor</b>: {{ product.vendor }}<br>
+<b>Category</b>: <a href="{% url 'category_detail' product.category.pk %}">{{ product.category.name }}</a><br>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Product Categories - ProdComb{% endblock %}
+{% block heading %}Product Categories{% endblock %}
+{% block content %}
+  {% if categories %}
+    <ul style="list-style: none; font-family: sans-serif;">
+    {% for category in categories %}
+      <li><a href="{% url 'category_detail' category.pk %}">{{ category.name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock content %}
