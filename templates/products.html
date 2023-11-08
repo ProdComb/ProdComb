@@ -3,9 +3,9 @@
 {% block heading %}Products{% endblock %}
 {% block content %}
   {% if products %}
-    <ul style="list-style: none; font-family: sans-serif;">
+    <ul>
     {% for product in products %}
-      <li><a href="{% url 'product_detail' product.pk %}">{{ product.search_term }}</a></li>
+      <li style="list-style: none"><a href="{% url 'product_detail' product.pk %}">{{ product.search_term }}</a></li>
     {% endfor %}
     </ul>
   {% endif %}
