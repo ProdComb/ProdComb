@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
+{% block heading %}Welcome to ProdComb!{% endblock %}
+
 {% block content %}
+  <p>ProdComb is a service that allows you to see how well or even if different products work with each other.
+  So that you can make better purchase descisions.</p>
+
   <button onclick="window.location.href='{% url 'combinations' %}';">All Combinations</button><br>
   <br>
   <button onclick="window.location.href='{% url 'categories' %}';">All Categories</button><br>
