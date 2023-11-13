@@ -3,10 +3,27 @@
 {% block heading %}Products{% endblock %}
 {% block content %}
   {% if products %}
-    <ul>
-    {% for product in products %}
-      <li style="list-style: none"><a href="{% url 'product_detail' product.pk %}">{{ product.search_term }}</a></li>
-    {% endfor %}
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"><strong>ID</strong></th>
+          <th scope="col"><strong>Search Term</strong></th>
+          <th scope="col"><strong>Name</strong></th>
+          <th scope="col"><strong>Vendor</strong></th>
+          <th scope="col"><strong>Category</strong></th>
+        </tr>
+       <tbody>
+        {% for product in products %}
+          <tr>
+            <td>{{ product.pk }}</td>
+            <td>{{ product.search_term }}</td>
+            <td>{{ product.full_name }}</td>
+            <td>{{ product.vendor }}</td>
+            <td><a href="{% url 'category_detail' product.category.pk %}">{{ product.category.name }}</a></td>
+          </tr>
+        {% endfor %}
+      </thead>
+     </tbody>
+    </table>
   {% endif %}
 {% endblock content %}
