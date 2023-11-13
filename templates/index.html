@@ -6,7 +6,12 @@
   <p>ProdComb is a service that allows you to see how well or even if different products work with each other.
   So that you can make better purchase descisions.</p>
 
-  <a role="button" href="{% url 'combinations' %}">Combinations</a>
-  <a role="button" href="{% url 'categories' %}">Categories</a>
-  <a role="button" href="{% url 'products' %}">Products</a>
+  <form action="{% url 'search' %}">
+    <input type="text" placeholder="Product Name" style="width: auto;" />
+    <input type="submit" value="Search" style="width: auto;" />
+  </form>
+
+  <a role="button" class="secondary" href="{% url 'combinations' %}">Combinations</a>
+  <a role="button" class="secondary" href="{% url 'categories' %}">Categories</a>
+  <a role="button" class="secondary" href="{% url 'products' %}">Products</a>
 {% endblock %}

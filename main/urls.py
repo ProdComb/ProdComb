@@ -10,4 +10,5 @@ urlpatterns = [
     path('categories/<int:pk>/', views.CategoryDetail.as_view(), name="category_detail"),
     path('products/', views.Products.as_view(), name="products"),
     path('products/<int:pk>/', views.ProductDetail.as_view(), name="product_detail"),
+    path('search/', views.Http501, name="search")
 ]
