@@ -35,3 +35,6 @@ class ProductDetail(generic.DetailView):
     template_name = "product-detail.html"
     context_object_name = "product"
     model = models.Product
+
+def Http501(request):
+    return render(request, "501.html", status=501)
