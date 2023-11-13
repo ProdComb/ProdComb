@@ -1,0 +1,14 @@
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+    --github-logo-fill-color: #24292f;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --github-logo-fill-color: #fff;
+    }
+}
+
+[data-theme="dark"] {
+    --github-logo-fill-color: #fff;
+}
