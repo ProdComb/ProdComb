@@ -12,3 +12,7 @@
 [data-theme="dark"] {
   --github-logo-fill-color: #fff;
 }
+
+[role="button"] {
+  margin: 5px;
+}
